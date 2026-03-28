@@ -1,4 +1,4 @@
-import { Heart, Bookmark, Share2, ArrowLeft, Search, Download, PlayCircle, Users, Crop, CheckCircle2, Sparkles, User, LayoutGrid, Menu, SlidersHorizontal, ChevronRight, Palette, Wand2, History, Settings, Headphones, UserCircle, Image } from "lucide-react";
+import { Heart, Bookmark, Share2, ArrowLeft, Search, Download, PlayCircle, Users, Crop, CheckCircle2, Sparkles, User, LayoutGrid, Menu, SlidersHorizontal, ChevronRight, Palette, Wand2, History, Settings, Headphones, UserCircle, Image, Shield, Info } from "lucide-react";
 
 export const Icons = {
   Heart,
@@ -23,5 +23,7 @@ export const Icons = {
   Settings,
   Headphones,
   UserCircle,
-  Image
+  Image,
+  Shield,
+  Info
 };

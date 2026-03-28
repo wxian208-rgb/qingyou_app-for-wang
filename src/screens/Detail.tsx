@@ -32,7 +32,7 @@ export default function Detail() {
 
       <main className="pt-16 pb-32">
         {/* Hero Image */}
-        <section className="relative w-full aspect-square overflow-hidden bg-surface-container-low">
+        <section className="w-full aspect-square overflow-hidden bg-surface-container-low">
           <motion.img 
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
@@ -41,78 +41,54 @@ export default function Detail() {
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
-          {/* Floating Actions */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 px-6 py-3 rounded-full bg-surface/40 glass-effect border border-white/10 shadow-2xl">
-            <button className="flex flex-col items-center gap-1">
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white text-on-surface shadow-sm active:scale-90 transition-transform">
-                <Icons.Heart size={20} />
-              </div>
-              <span className="text-[10px] font-medium text-on-surface/80">3.8k</span>
-            </button>
-            <button className="flex flex-col items-center gap-1">
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white text-on-surface shadow-sm active:scale-90 transition-transform">
-                <Icons.Bookmark size={20} />
-              </div>
-              <span className="text-[10px] font-medium text-on-surface/80">收藏</span>
-            </button>
-            <button className="flex flex-col items-center gap-1">
-              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white text-on-surface shadow-sm active:scale-90 transition-transform">
-                <Icons.Share2 size={20} />
-              </div>
-              <span className="text-[10px] font-medium text-on-surface/80">分享</span>
-            </button>
-          </div>
         </section>
 
-        {/* Content */}
-        <article className="px-6 mt-8 max-w-2xl mx-auto">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-semibold">
-              {avatar.category}
-            </span>
-            {avatar.tags.map(tag => (
-              <span key={tag} className="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant text-xs">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <h2 className="font-headline text-3xl text-on-surface mb-2 leading-tight font-bold">{avatar.title}</h2>
-          <p className="text-base text-on-surface-variant leading-relaxed mb-12">
-            {avatar.description}
-          </p>
+        {/* Action Bar */}
+        <div className="flex items-center justify-center gap-8 py-5 bg-background border-b border-surface-container-low">
+          <button className="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors active:scale-95">
+            <Icons.Heart size={20} />
+            <span className="text-sm font-medium">3.8k</span>
+          </button>
+          <button className="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors active:scale-95">
+            <Icons.Bookmark size={20} />
+            <span className="text-sm font-medium">收藏</span>
+          </button>
+          <button className="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors active:scale-95">
+            <Icons.Share2 size={20} />
+            <span className="text-sm font-medium">分享</span>
+          </button>
+        </div>
 
+        {/* Content */}
+        <article className="px-6 mt-6 max-w-2xl mx-auto">
           {/* Download Section */}
           <section className="bg-surface-container-low rounded-lg p-8 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl" />
             <div className="relative z-10">
-              <div className="flex justify-between items-end mb-8">
-                <div>
-                  <p className="text-xs text-on-surface-variant mb-1">头像下载权益</p>
-                  <h3 className="text-xl font-bold text-on-surface">今日免费下载次数: <span className="text-primary font-headline">2/5</span></h3>
-                </div>
-                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-primary-container text-primary">
-                  <Icons.CheckCircle2 size={24} />
+              <div className="flex justify-between items-center mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 flex items-center justify-center rounded-full bg-primary-container text-primary">
+                    <Icons.CheckCircle2 size={16} />
+                  </div>
+                  <p className="text-sm font-medium text-on-surface">
+                    今日免费下载次数: <span className="text-primary font-bold ml-1">2/5</span>
+                  </p>
                 </div>
               </div>
-              <div className="grid grid-cols-1 gap-4">
-                <button className="flex items-center justify-between w-full px-6 py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary-container rounded-full shadow-lg active:scale-[0.98] transition-all group">
-                  <span className="font-semibold tracking-wide">立即下载高清头像 (消耗 1 次)</span>
-                  <Icons.Download size={20} className="group-hover:translate-x-1 transition-transform" />
+              <div className="flex flex-row gap-3">
+                <button className="flex-1 flex flex-col items-center justify-center gap-1.5 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary-container rounded-2xl shadow-sm active:scale-[0.98] transition-all group">
+                  <Icons.Download size={20} className="group-hover:translate-y-0.5 transition-transform" />
+                  <span className="text-xs font-semibold">下载头像</span>
                 </button>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <button className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-white text-primary border border-primary/10 rounded-full hover:bg-primary/5 active:scale-[0.98] transition-all">
-                    <Icons.PlayCircle size={20} />
-                    <span className="text-sm font-semibold">看视频获取下载权益</span>
-                  </button>
-                  <button className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-white text-secondary border border-secondary/10 rounded-full hover:bg-secondary/5 active:scale-[0.98] transition-all">
-                    <Icons.Users size={20} />
-                    <span className="text-sm font-semibold">邀请好友 (每日5次)</span>
-                  </button>
-                </div>
+                <button className="flex-1 flex flex-col items-center justify-center gap-1.5 py-3 bg-white text-primary border border-primary/10 rounded-2xl hover:bg-primary/5 active:scale-[0.98] transition-all">
+                  <Icons.PlayCircle size={20} />
+                  <span className="text-xs font-semibold">看视频</span>
+                </button>
+                <button className="flex-1 flex flex-col items-center justify-center gap-1.5 py-3 bg-white text-secondary border border-secondary/10 rounded-2xl hover:bg-secondary/5 active:scale-[0.98] transition-all">
+                  <Icons.Users size={20} />
+                  <span className="text-xs font-semibold">邀请好友</span>
+                </button>
               </div>
-              <p className="mt-6 text-center text-[10px] text-on-surface-variant/60">
-                图片版权归作者所有 · 个人使用请遵守《青柚社区公约》
-              </p>
             </div>
           </section>
         </article>

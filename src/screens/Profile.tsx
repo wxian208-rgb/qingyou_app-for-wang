@@ -10,10 +10,10 @@ export default function Profile() {
   ];
 
   const menuItems = [
-    { icon: Icons.LayoutGrid, label: '我的头像作品库' },
     { icon: Icons.History, label: '下载记录与授权' },
     { icon: Icons.Settings, label: '偏好生成预设' },
-    { icon: Icons.Headphones, label: '创作支持' },
+    { icon: Icons.Shield, label: '隐私政策' },
+    { icon: Icons.Info, label: '关于我们' },
   ];
 
   return (
