@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #faf9f5;
+  --color-primary: #556444;
+  --color-primary-container: #d8e8c0;
+  --color-on-primary: #eeffd5;
+  --color-on-primary-container: #485637;
+  --color-secondary: #586253;
+  --color-secondary-container: #dce6d3;
+  --color-on-secondary-container: #4b5446;
+  --color-surface: #faf9f5;
+  --color-surface-container: #eeeee9;
+  --color-surface-container-low: #f4f4ef;
+  --color-surface-container-high: #e8e9e3;
+  --color-surface-container-highest: #e1e3dd;
+  --color-on-surface: #30332f;
+  --color-on-surface-variant: #5d605b;
+  --color-outline-variant: #b0b3ad;
+
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Manrope", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body;
+  }
+}
+
+.glass-effect {
+  @apply backdrop-blur-xl bg-white/20;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.masonry-grid {
+  column-count: 2;
+  column-gap: 1.25rem;
+}
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.25rem;
+}
